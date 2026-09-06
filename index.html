@@ -133,21 +133,23 @@ modeling</td>
 </table>
 <h2 id="reports">Reports</h2>
 <ul>
-<li><a href="report.html"><code>report.html</code></a> — a pre-built,
-standalone HTML report (this README rendered with all figures embedded)
-— just open it in a browser, no R required.</li>
+<li><strong>Live report:</strong>
+https://zeyadsait.github.io/hmeq-pca-tsne-clustering/ — this README
+rendered as a standalone page with all figures embedded (served via
+GitHub Pages from <a href="index.html"><code>index.html</code></a>).</li>
 <li><a href="report.Rmd"><code>report.Rmd</code></a> — the reproducible
-R Markdown source. Knit it yourself
-(<code>rmarkdown::render(&quot;report.Rmd&quot;)</code>) any time you update the
-data or scripts to regenerate a fresh report.</li>
+R Markdown source. Knit it yourself (open in RStudio and click “Knit”,
+or run <code>rmarkdown::render(&quot;report.Rmd&quot;)</code>) any time you update
+the data or scripts; it’s configured to regenerate
+<code>index.html</code> directly.</li>
 </ul>
 <h2 id="repository-structure">Repository structure</h2>
 <pre><code>.
 ├── README.md
 ├── LICENSE
 ├── .gitignore
-├── report.Rmd                # R Markdown source -&gt; knit for a fresh HTML report
-├── report.html               # pre-built standalone HTML report (open directly, no R needed)
+├── report.Rmd                # R Markdown source -&gt; knits to index.html
+├── index.html                # pre-built HTML report, served live via GitHub Pages
 ├── data/
 │   └── README.md            # where to put the HMEQ CSV (not included)
 ├── scripts/

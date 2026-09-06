@@ -6,6 +6,9 @@ output:
     toc_float: true
     theme: flatly
     code_folding: show
+knit: (function(input, ...) {
+    rmarkdown::render(input, output_file = "index.html", ...)
+  })
 ---
 
 ```{r setup, include=FALSE}
