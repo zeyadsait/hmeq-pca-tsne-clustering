@@ -15,6 +15,11 @@ reproducible R project:
 | **Part 1** | PCA & t-SNE for dimensionality reduction and predictive modeling | `scripts/01`–`05` |
 | **Part 2** | PCA + K-Means clustering to segment borrowers | `scripts/06` |
 
+## Reports
+
+- [`report.html`](report.html) — a pre-built, standalone HTML report (this README rendered with all figures embedded) — just open it in a browser, no R required.
+- [`report.Rmd`](report.Rmd) — the reproducible R Markdown source. Knit it yourself (`rmarkdown::render("report.Rmd")`) any time you update the data or scripts to regenerate a fresh report.
+
 ## Repository structure
 
 ```
@@ -22,6 +27,8 @@ reproducible R project:
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+├── report.Rmd                # R Markdown source -> knit for a fresh HTML report
+├── report.html               # pre-built standalone HTML report (open directly, no R needed)
 ├── data/
 │   └── README.md            # where to put the HMEQ CSV (not included)
 ├── scripts/

@@ -1,0 +1,82 @@
+---
+title: "HMEQ Loan Default: PCA, t-SNE & Cluster Analysis"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                       fig.width = 7, fig.height = 5)
+```
+
+This notebook runs the full pipeline (baseline models → PCA → t-SNE →
+modeling comparison → clustering) and knits the results straight into a
+single HTML report. It's the reproducible counterpart to the static
+`report.html` already in this repo — knit this file yourself any time
+you update the data or the scripts and want a fresh report.
+
+```{r load-data}
+data_path <- "data/HMEQ_Processed.csv"
+df <- read.csv(data_path, header = TRUE)
+str(df)
+```
+
+# Part 1: PCA & t-SNE for Predictive Modeling
+
+## Step 1: Baseline models on the original data
+
+```{r step1, results="hide"}
+source("scripts/01_baseline_models.R")
+```
+
+## Step 2: PCA analysis
+
+```{r step2}
+source("scripts/02_pca_analysis.R")
+```
+
+## Step 3: t-SNE analysis
+
+```{r step3, results="hide"}
+source("scripts/03_tsne_analysis.R")
+```
+
+## Step 4: Models on the original data + PCA/t-SNE columns
+
+```{r step4, results="hide"}
+source("scripts/04_models_original_data.R")
+```
+
+```{r step4-auc}
+auc(roc_obj)
+```
+
+## Step 5: Models on PCA/t-SNE features only
+
+```{r step5, results="hide"}
+source("scripts/05_models_pca_tsne_data.R")
+```
+
+```{r step5-auc}
+auc(roc_obj2)
+```
+
+Comparing the two AUC values above is the key result of Part 1: the
+full feature set clearly outperforms the PCA/t-SNE-only feature set.
+
+# Part 2: PCA + K-Means Cluster Analysis
+
+```{r step6, results="hide"}
+source("scripts/06_cluster_analysis.R")
+```
+
+```{r cluster-sizes}
+final_km$size
+```
+
+See `README.md` for the full narrative write-up and figure-by-figure
+discussion of these results.
