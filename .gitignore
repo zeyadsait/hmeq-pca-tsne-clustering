@@ -1,0 +1,13 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Data (not redistributed - see data/README.md)
+data/*.csv
+!data/README.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
