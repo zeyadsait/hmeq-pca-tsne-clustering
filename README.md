@@ -37,6 +37,12 @@ reproducible R project:
 
 ## Data
 
+A small synthetic dataset with the right schema is included at
+`data/sample_HMEQ_Processed.csv` so the pipeline runs out of the box —
+see `data/README.md` to use it (`cp` it to `data/HMEQ_Processed.csv`).
+Its values are randomly generated and carry no real signal; swap in the
+real HMEQ data for meaningful results.
+
 The scripts expect a processed HMEQ file at `data/HMEQ_Processed.csv` —
 the output of a prior cleaning step (imputed missing values with paired
 `IMP_*` / `M_*` missing-flag columns, and one-hot encoded `JOB` / `REASON`

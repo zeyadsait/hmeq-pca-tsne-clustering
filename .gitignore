@@ -4,9 +4,10 @@
 .Rproj.user/
 *.Rproj
 
-# Data (not redistributed - see data/README.md)
+# Data (real HMEQ data is not redistributed - see data/README.md)
+# The synthetic sample below IS tracked, so the pipeline is runnable out of the box.
 data/*.csv
-!data/README.md
+!data/sample_HMEQ_Processed.csv
 
 # OS / editor cruft
 .DS_Store

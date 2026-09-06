@@ -1,7 +1,19 @@
 # Data
 
-This folder is intentionally empty in the repository — the HMEQ dataset
-is not redistributed here.
+The real HMEQ dataset is not redistributed here. This folder does
+include one file, `sample_HMEQ_Processed.csv` — a small (1,000-row)
+**synthetic** dataset with the correct column names and types, so the
+scripts run out of the box for anyone browsing the repo. Its values are
+randomly generated and carry no real signal, so don't draw conclusions
+from results produced with it — swap in the real data (below) for
+actual analysis.
+
+## Quick start with the sample data
+
+```bash
+cp data/sample_HMEQ_Processed.csv data/HMEQ_Processed.csv
+Rscript scripts/run_all.R
+```
 
 The scripts expect a file at:
 
